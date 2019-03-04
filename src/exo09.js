@@ -4,8 +4,10 @@ export function parseUserData(data) {
   const defaults = { name: "Anonymous", isAdmin: false };
 
   // 1 - en utilisant Object.assign
+  return Object.assign({}, defaults, data);
   // 2 - en utilisant l'opérateur spread sur les properties
+  return { ...defaults, ...data };
   // 3 - en utilisant le destructuring et les paramètres par défaut pour parseUserData
-
-  return data;
+  let { name = "Anonymous", isAdmin = false, ...props } = data;
+  return { name, isAdmin, ...props };
 }

@@ -11,7 +11,7 @@ export function getActions() {
   const actions = [];
 
   // TOFIX: retourner la chanson correctement
-  for (var i = 0; i < paroles.length; i++) {
+  for (let i = 0; i < paroles.length; i++) {
     actions.push(function sing() {
       return paroles[i] + ", " + paroles[i] + ", " + paroles[i] + " !!!";
     });

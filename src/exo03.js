@@ -2,5 +2,9 @@
 // { a: "b" } => { b: "a" }
 
 export function invertKeysAndValues(obj) {
-  return obj;
+  let objToBEReturned = {};
+  Object.entries(obj).forEach(function([x, y]) {
+    Object.assign(objToBEReturned, { [y]: x });
+  });
+  return objToBEReturned;
 }
